@@ -1,0 +1,158 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{breakurl}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{derivative}
+\usepackage{bm}
+
+\begin{document}
+
+\title{Mathematical Proof: Problem Set 1}
+
+\author{Koichiro Takahashi}
+
+% \maketitle creates the title, author list, and submission date
+\maketitle 
+
+\section*{Problem.1}
+$(a)$ is NOT a set, since the curly brackets are not properly matched and does not satisfy the definition of a set.\\[1em]
+$(b)$ is a set, since the curly brackets are properly matched and satisfies the definition of a set.\\[1em]
+$(c)$ is a set, since the curly brackets are properly matched and satisfies the definition of a set.\\[1em]
+$(d)$ is NOT a set, since the objects are not enclosed in curly brackets and does not satisfy the definition of a set.
+
+\section*{Problem.2}
+$(a)$
+\begin{gather*}
+A = \{-2, -1, 0, 1, 2, 3, 4, 5\}
+\end{gather*}
+$(b)$
+\begin{gather*}
+B = \{1, 4, 9, 16, 25, 36, 49, 64, 81\}
+\end{gather*}
+$(c)$
+\begin{gather*}
+C = \{-64, -27, -8, -1, 0, 1, 8, 27, 64\}
+\end{gather*}
+$(d)$
+\begin{gather*}
+D = \emptyset
+\end{gather*}
+$(e)$
+\begin{gather*}
+E = \{0,1\}
+\end{gather*}
+
+\section*{Problem.3}
+$(a)$
+\begin{gather*}
+A = \{0\},~B = \{\{0\},1\},~C = \{\{\{0\},1\},2\}
+\end{gather*}
+$(b)$
+\begin{gather*}
+A = \{0\},~B = \{\{0\},1\},~C = \{0, 1\}
+\end{gather*}
+$(c)$
+\begin{gather*}
+A = \{0, 1\},~B = \{1, 2\},~C = \{1, \{0, 1\}, \{1, 2\}\}
+\end{gather*}
+\begin{gather*}
+A \cap B = \{1\} \subset C,~A \cup B = \{0, 1, 2\} \notin C
+\end{gather*}
+
+\section*{Problem.4}
+\begin{gather*}
+A = \{-1, 0, 1\},~B = \{-1, 0, 1\},~C = \{0, 1\},~D = \{-1,0,1\},~E = \{-1,0,1\}
+\end{gather*}
+\begin{gather*}
+\therefore A = B = D = E 
+\end{gather*}
+
+\section*{Problem.5}
+Here, $ i \in \mathbb{Z}, B_i = \{i-1,i,i+1\} $. \\[1em]
+$(a)$
+\begin{align*}
+\cap^{3}_{i=1} \left(B_{2i-1} \cup B_{2i+1}\right) &= \left(B_{1} \cup B_{3}\right) \cap \left(B_{3} \cup B_{5}\right) \cap \left(B_{5} \cup B_{7}\right)\\[1em]
+&= \left(\{0,1,2\} \cup \{2,3,4\}\right) \cap \left(\{2,3,4\} \cup \{4,5,6\}\right) \cap \left(\{4,5,6\} \cup \{6,7,8\}\right)\\[1em]
+&= \{0,1,2,3,4\} \cap \{2,3,4,5,6\} \cap \{4,5,6,7,8\}\\[1em]
+&= \{4\}
+\end{align*}
+
+
+$(b)$
+\begin{gather*}
+B_{i} \cap B_{i+1} = \{i-1,i,i+1\} \cap \{i,i+1,i+2\} = \{i,i+1\}
+\end{gather*}
+\begin{align*}
+\therefore \cup^{n}_{i=1} \left(B_{i} \cap B_{i+1}\right) &= \cup^{n}_{i=1} \{i,i+1\} = \{1,2\} \cup \{2,3\} \cup \dots \cup \{n,n+1\}\\[1em]
+&= \{1,2,\dots,n,n+1\} = \{l \in \mathbb{N}~|~ 1 \leq l \leq n+1\}~~(n \in \mathbb{N})
+\end{align*}
+
+$(c)$
+\begin{gather*}
+B_{3i} \cup B_{-3i} = \{3i-1,3i,3i+1\} \cup \{-3i-1,-3i,-3i+1\} = \{-3i-1,-3i,-3i+1,3i-1,3i,3i+1\}
+\end{gather*}
+\begin{align*}
+\therefore \cup^{\infty}_{i=0} \left(B_{3i} \cup B_{-3i}\right) &= \cup^{\infty}_{i=0} \{-3i-1,-3i,-3i+1,3i-1,3i,3i+1\}\\[1em]
+&= \{-1,0,1\} \cup \{-4,-3,-2,2,3,4\} \cup \{-7,-6,-5,5,6,7\} \cup \dots\\[1em]
+&= \mathbb{Z}\\[1em]
+(&\because 3(i+1)-1 = 3i+2 > 3i + 1, -3(i+1)+1 = -3i-2 < -3i -1) 
+\end{align*}
+
+\section*{Problem.6}
+Here, $A = \{1,2,3,4,\dots,10\}$.\\[1em]
+$(a)$ A partition that meets the requirements of this problem $S$ is
+\begin{gather*}
+S = \{\{1\}, \{2,3,4\}, \{5,6,7,8,9,10\}\}.
+\end{gather*}
+$(b)$ Let $A$ a set, if no two cells in that partition have the same cardinality, the greatest number of cells that can be taken in such a partition $|S|_{max}$ is the number of elements of natural numbers added from 1 in order and become larger than $|A|$, minus one.
+In this case, $|A| = 10$, and $1+2+3+4 = 10, 1+2+3+4+5 = 15 > 10$.
+\begin{gather*}
+\therefore |S|_{max} = 4
+\end{gather*}
+$(c)$ 
+Given that the cells of a partition are nonempty and pairwise disjoint,
+the smallest cardinality a set B can have and still possess a partition with exactly three cells, no two of which have the same cardinality $|B|_{min}$, is the number of natural numbers added from 1 to 3.
+\begin{gather*}
+\therefore |B|_{min} = 1 + 2 + 3 = 6
+\end{gather*}
+
+\section*{Problem.7}
+Here, $r \in \mathbb{R},~r \geq 0,~C_r = \{(x,y) \in \mathbb{R} \times \mathbb{R}~|~x^2 + y^2 = r^2\}$, and $\mathcal{D} = \{C_r~|~r \in \mathbb{R} ~\mathrm{and}~ r > 0\}$.\\
+If $r > 0 \Rightarrow r^2 > 0$, therefore
+\begin{gather*}
+0 < r^2 = x^2 + y^2 \Rightarrow x^2 > 0~\mathrm{or}~y^2 > 0 \Rightarrow x \neq 0~\mathrm{or}~y \neq 0.
+\end{gather*}
+Thus, even though $(0,0) \in \mathbb{R} \times \mathbb{R}$,
+\begin{gather*}
+ (0,0) \notin \cup_{r \in \mathbb{R}, r > 0}  C_r \neq \mathbb{R} \times \mathbb{R}
+\end{gather*}
+and $\mathcal{D}$ is NOT a partition of the Cartesian plane $\mathbb{R} \times \mathbb{R}$.
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
