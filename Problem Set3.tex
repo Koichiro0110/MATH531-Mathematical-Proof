@@ -1,0 +1,326 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{derivative}
+\usepackage{bm}
+\usepackage{comment}
+\usepackage{cancel}
+\usepackage{xcolor}
+
+
+\begin{document}
+\title{Mathematical Proof: Problem Set 3}
+\author{Koichiro Takahashi}
+\maketitle 
+
+\section*{Problem.1}
+(a)
+\begin{center}
+Some element of $U$ cannot be expressed as $x+y$, where any $x \in S$ and any $y \in T$.
+\end{center}
+(b)
+\begin{center}
+For some $x \in S$ and $y \in S$, $xy \notin S$.
+\end{center}
+(c)
+\begin{center}
+For some element $x \in S$, there is not an element $y \in T$ such that $y > x$.
+\end{center}
+\section*{Problem.2}
+(a)
+\begin{gather*}
+x^2-x=0 \Leftrightarrow x(x-1)=0~\therefore x=0,1 \in \mathbb{R}
+\end{gather*}
+Thus the truth value is $T$.\\[1em]
+(b)
+\begin{center}
+$1+1 \geq 2$, and for any other $n \in \mathbb{N}, n+1 \geq 1+1 \geq 2$.
+\end{center}
+Thus the truth value is $T$.\\[1em]
+(c)
+\begin{center}
+Counterexample: $x = -1 \in \mathbb{R} \Rightarrow \sqrt{(-1)^2} = 1 \neq -1$
+\end{center}
+Thus the truth value is $F$.\\[1em]
+(d)
+\begin{gather*}
+3 x^2 - 27 = 0 \Leftrightarrow x^2 = 9~\therefore x= \pm 3 \in \mathbb{Q}
+\end{gather*}
+Thus the truth value is $T$.\\[1em]
+(e)
+\begin{center}
+Example: $x = 3 \in \mathbb{R}, y = 2 \in \mathbb{R} \Rightarrow 3 + 2 + 3 = 8$
+\end{center}
+Thus the truth value is $T$.\\[1em]
+(f)
+\begin{gather*}
+x^2 + y^2 = 9 \Leftrightarrow x^2 = 9 - y^2
+\end{gather*}
+Therefore, for given $y > 3$, $x^2 = 9 - y^2 < 0$ and there is no such $x \in \mathbb{R}~s.t.~x ^2 < 0$.
+Thus the truth value is $F$.\\[1em]
+(g)
+The same argument is applicable as in (f), since $x$ and $y$ is defined over the same domain and the open sentence $x^2 + y^2 = 9$ is symmetric under exchange of variables $x$ and $y$.
+Thus the truth value is $F$.
+
+
+\section*{Problem.3}
+My answer is only (d). The below is the reasoning for each question.\\
+The De Morgan's law,
+\begin{gather*}
+\sim (P(x) \land Q(x)) \equiv (\sim P(x)) \lor (\sim Q(x)), \sim (P(x) \lor Q(x)) \equiv (\sim P(x)) \land (\sim Q(x))
+\end{gather*}
+Also, we know that
+\begin{gather*}
+\sim (P(x) \Rightarrow Q(x)) \equiv P(x) \land (\sim Q(x))
+\end{gather*}
+Therefore,
+\begin{gather*}
+\sim((\sim P(x)) \Rightarrow Q(x)) \equiv (\sim P(x)) \land (\sim Q(x))
+\end{gather*}
+Considering the result above, here we define the statement $K$ as follows:
+\begin{gather*}
+K: \exists x \in S, (\sim P(x)) \land (\sim Q(x))
+\end{gather*}
+Suppose the quantified statement $R$, and we define the compound statement $K'$ as follows:
+\begin{gather*}
+K': R \Rightarrow K
+\end{gather*}
+ For each statement $R$, if we could sufficiently show that $K'$ is always true, the answer is YES. However, if we could find the counterexample of the statement $K'$, or could not sufficiently show that $K'$ is always true, the answer is NO.\\[1em]
+(a) By the De Morgan's law,
+\begin{gather*}
+\sim (P(x) \land Q(x)) \equiv (\sim P(x)) \lor (\sim Q(x))
+\end{gather*}
+Therefore, here we define the statement R as follows:
+\begin{gather*}
+R: \forall  x \in S, (\sim P(x)) \lor (\sim Q(x))
+\end{gather*}
+Therefore, $K'$ is not necessarily true, since either $\sim P(x)$ or $\sim Q(x)$ could be false. So the answer is NO.\\[1em]
+(b)
+Here, we define the statement R as follows:
+\begin{gather*}
+R: \forall  x \in S, P(x)
+\end{gather*}
+The answer is obviously NO because $\forall  x \in S, P(x)$ does not satisfy $(\sim P(x)) \land (\sim Q(x))$, thus K' is false.\\[1em]
+(c)
+Here, we define the statement R as follows:
+\begin{gather*}
+R: \forall  x \in S, Q(x)
+\end{gather*}
+The answer is obviously NO because $\forall  x \in S, Q(x)$ does not satisfy $(\sim P(x)) \land (\sim Q(x))$, thus K' is false.\\[1em]
+(d) By the De Morgan's law,
+\begin{gather*}
+\sim (P(x) \lor Q(x)) \equiv (\sim P(x)) \land (\sim Q(x))
+\end{gather*}
+Therefore, here we define the statement R as follows:
+\begin{gather*}
+R: \exists  x \in S, (\sim P(x)) \land (\sim Q(x))
+\end{gather*}
+The statement $R$ is identical to the statement $K$, so $K'$ is always true.
+Thus, the answer is YES.\\[1em]
+(e) By the De Morgan's law,
+\begin{gather*}
+\sim (P(x) \land (\sim Q(x)) \equiv (\sim P(x)) \lor (Q(x))
+\end{gather*}
+Therefore, here we define the statement R as follows:
+\begin{gather*}
+R: \forall  x \in S, (\sim P(x)) \lor (Q(x))
+\end{gather*}
+Therefore, $K'$ is not necessarily true, since either $\sim P(x)$ or $\sim Q(x)$ could be false. So the answer is NO.\\[1em]
+\section*{Problem.4}
+\underline{\textit{Proof}}: Assume $a,b$, and $c$ are odd integers such that $a + b + c = 0$.\\
+By definition,
+\begin{gather*}
+\exists k,l,m \in \mathbb{Z}, ~s.t.~a = 2k+1, b= 2l+1, c= 2m+1
+\end{gather*}
+Therefore,
+\begin{gather*}
+a + b + c = (2k+1) + (2l+1) + (2m+1) = 2(k+l+m+1) + 1 
+\end{gather*}
+Thus,
+\begin{gather*}
+\exists n \in \mathbb{Z},~s.t.~a + b + c = 2n + 1 \neq 0
+\end{gather*}
+which contradicts the assumption. So $\forall a,b,c \in \mathbb{Z},a+b+c=0$ is false, therefore the implication is true.~$\blacksquare$~(vacuous proof)
+
+
+\section*{Problem.5}
+\underline{\textit{Proof}}: Assume $x$ is an even integer, by definition,
+\begin{gather*}
+\exists k \in \mathbb{Z},~s.t.~x = 2k
+\end{gather*}
+Therefore,
+\begin{gather*}
+7x-3 = 7 \cdot 2k - 3 = 2(7k-2)+1
+\end{gather*}
+Thus,
+\begin{gather*}
+\exists l \in \mathbb{Z},~s.t.~7x-3 = 2l+1
+\end{gather*}
+and $7x-3$ is an odd integer.\\
+For the converse, prove by contrapositive.
+Assume $x$ is an odd integer, by definition,
+\begin{gather*}
+\exists k \in \mathbb{Z},~s.t.~x = 2k + 1
+\end{gather*}
+Therefore,
+\begin{gather*}
+7x-3 = 7(2k+1) - 3 = 14k + 4 = 2(7k+2)
+\end{gather*}
+Thus,
+\begin{gather*}
+\exists l \in \mathbb{Z},~s.t.~7x-3 = 2l
+\end{gather*}
+and $7x-3$ is an even integer.\\
+From the above, the statement is true.~$\blacksquare$
+
+\section*{Problem.6}
+\underline{\textit{Proof}}: Let $x \in \mathbb{Z}$.
+Assume $3x-1$ is even, by definition,
+\begin{gather*}
+\exists k \in \mathbb{Z},~s.t.~3x - 1 = 2k
+\end{gather*}
+Therefore,
+\begin{gather*}
+5x + 2 = (3x - 1) + 2(x+1) + 1 = 2k + 2(x+1) + 1 = 2(k+x+1) + 1
+\end{gather*}
+Thus,
+\begin{gather*}
+\exists l \in \mathbb{Z},~s.t.~5x+2 = 2l + 1
+\end{gather*}
+and $5x+2$ is odd.\\
+Next, assume $5x+2$ is odd, by definition,
+\begin{gather*}
+\exists m \in \mathbb{Z},~s.t.~5x+2= 2m+1
+\end{gather*}
+Therefore,
+\begin{gather*}
+3x - 1 = (5x+2) -2x -3  = (2m + 1) + 2(-x-2) + 1 = 2(m-x-1) 
+\end{gather*}
+Thus,
+\begin{gather*}
+\exists n \in \mathbb{Z},~s.t.~3x-1 = 2n
+\end{gather*}
+and $3x-1$ is even.\\
+From the above, the statement is true.~$\blacksquare$
+
+
+\section*{Problem.7}
+Recall $\mathbb{E}, \mathbb{O}$ are sets of even and odd integers respectively.\\
+First, we prove a lemma below.
+\begin{center}
+Lemma 1: Let $x \in \mathbb{Z}$. $x^2 \in \mathbb{E} \Rightarrow x \in \mathbb{E}$
+\end{center}
+\underline{\textit{Proof}}: We prove by contrapositive. Let $x \in \mathbb{O}$. By definition,
+\begin{gather*}
+\exists k \in \mathbb{Z},~s.t.~ x = 2k + 1
+\end{gather*}
+Therefore,
+\begin{gather*}
+x^2 =  (2k + 1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1 \in \mathbb{O} ~~\blacksquare
+\end{gather*}
+Next we prove another lemma below.
+\begin{center}
+Lemma 2: Let $a,b,c \in \mathbb{Z}$. $ a^2 + b^2 = c^2 \Rightarrow (abc)^2 \in \mathbb{E}$
+\end{center}
+\underline{\textit{Proof}}:
+Let $a,b,c \in \mathbb{Z}$. Assume $a^2 + b^2 = c^2$.\\
+Since $a$ and $b$ are symmetric variable in this statement, and also since $\{\mathbb{E}, \mathbb{O}\}$ is a partition of $\mathbb{Z}$, we proceed by three cases, according to whether $a$ and $b$ are even or odd.\\[1em]
+\underline{\textit{Case $1$}}: $a, b \in \mathbb{E}$.\\
+By definition,
+\begin{gather*}
+\exists k, l \in \mathbb{Z},~s.t.~ a = 2k, b = 2l
+\end{gather*}
+Therefore, by the assumption
+\begin{gather*}
+c^2 = a^2 + b^2 = (2k)^2 + (2l)^2 = 4(k^2+l^2) \in \mathbb{Z}
+\end{gather*}
+\begin{gather*}
+\Rightarrow (abc)^2 = a^2 b^2 c^2 = 2 (2 a^2 b^2 (k^2+l^2)) \in \mathbb{E}.
+\end{gather*}
+\underline{\textit{Case $2$}}: $a, b \in \mathbb{O}$.
+By definition,
+\begin{gather*}
+\exists k, l \in \mathbb{Z},~s.t.~ a = 2k+1, b = 2l+1
+\end{gather*}
+Therefore, by the assumption
+\begin{gather*}
+c^2 = a^2 + b^2 = (2k+1)^2 + (2l+1)^2 = 4(k^2+l^2) + 4(k+l) + 2 = 2(2(k^2+l^2) +2(k+l) + 1) \in \mathbb{Z}
+\end{gather*}
+\begin{gather*}
+\Rightarrow (abc)^2 = a^2 b^2 c^2 = 2 (a^2 b^2 (2(k^2+l^2) +2(k+l) + 1)) \in \mathbb{E}.
+\end{gather*}
+\underline{\textit{Case $3$}}: $a \in \mathbb{E}, b \in \mathbb{O}$.
+By definition,
+\begin{gather*}
+\exists k, l \in \mathbb{Z},~s.t.~ a = 2k, b = 2l+1
+\end{gather*}
+Therefore, by the assumption
+\begin{gather*}
+c^2 = a^2 + b^2 = (2k)^2 + (2l+1)^2 = 4(k^2+l^2) + 4l +1 \in \mathbb{Z}
+\end{gather*}
+\begin{gather*}
+\Rightarrow (abc)^2 = a^2 b^2 c^2 = (2k)^2 b^2 c^2 = 2(2k^2 b^2 c^2) \in \mathbb{E}.~~\blacksquare
+\end{gather*}
+From the Lemma 1 and Lemma 2 above, we immediately prove the statement:
+\begin{center}
+Let $a,b,c \in \mathbb{Z}$. $ a^2 + b^2 = c^2 \Rightarrow abc \in \mathbb{E}$
+\end{center}
+\underline{\textit{Proof}}:
+Let $a,b,c \in \mathbb{Z}$. Assume $a^2 + b^2 = c^2$.\\
+By using the Lemma 2, $(abc)^2 \in \mathbb{E}$. By using the Lemma 1, $abc \in \mathbb{E}.~~\blacksquare$
+\begin{comment}
+Here, 
+\begin{align*}
+(a+b+c)(a^2+b^2+c^2-ab-bc-ca) &= a^3 + ab^2 + \cancel{c^2a} - \cancel{a^2b} - abc - \cancel{ca^2}\\[1em]
+&+\cancel{a^2b} + b^3 + \cancel{bc^2} -ab^2 -b^2c -abc\\[1em]
+&+ \cancel{ca^2} + bc^2 +c^3 -abc - bc^2 - c^2a\\[1em]
+&=a^3+b^3+c^3 - 3 abc
+\end{align*}
+Therefore, the factorization formula
+\end{comment}
+\section*{Problem.8}
+\underline{\textit{Proof}}: Let $a,b,c \in \mathbb{R}$ be the sides of a triangle $\mathcal{T}$ where $a \leq b \leq c$. Assume $\mathcal{T}$ is a right triangle.\\
+By $a \leq b \leq c$ and the Pythagorean theorem,
+\begin{gather*}
+c^2 = a^2 + b^2
+\end{gather*}
+Therefore,
+\begin{align*}
+3(abc)^2 - (c^6 - a^6 - b^6) &= 3 a^2 b^2 (a^2+b^2) - ((a^2+b^2)^3 - a^6 - b^6)\\[1em]
+&= 3 a^4 b^2 + 3 a^2 b^4 + -(a^6 + 3 a^4 b^2 + 3 a^2 b^4 + b^6 - a^6 - b^6)\\[1em]
+&= 3 a^4 b^2 + 3 a^2 b^4 + - 3 a^4 b^2 - 3 a^2 b^4\\[1em]
+&= 0
+\end{align*}
+\begin{gather*}
+\therefore (abc)^2 = \frac{c^6 - a^6 - b^6}{3}~~\blacksquare
+\end{gather*}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
