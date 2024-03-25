@@ -1,0 +1,157 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{derivative}
+\usepackage{bm}
+\usepackage{comment}
+\usepackage{cancel}
+\usepackage{xcolor}
+
+
+\begin{document}
+\title{Mathematical Proof: Problem Set 5}
+\author{Koichiro Takahashi}
+\maketitle 
+\noindent We know the triangle inequality from the textbook(or our class):
+\begin{center}
+Theorem 4.17:
+Let $a,b \in \mathbb{R}$. $|a+b| \leq |a| + |b|$.
+\end{center}
+
+\section*{Problem.1}
+\underline{\textit{Proof}}: Let $a, b, c, d \in \mathbb{R}$.
+Here,
+\begin{align*}
+(ac+bd)^2 &= a^2 c^2 + b^2 d^2 + 2abcd\\[1em]
+(ab-cd)^2 &= a^2 b^2 + c^2 d^2 - 2abcd
+\end{align*}
+Since the square of any real number is non-negative, observe
+\begin{gather*}
+(ab - cd)^2 \geq 0
+\end{gather*}
+$\Leftrightarrow$
+\begin{gather*}
+a^2 b^2 + c^2 d^2 - 2abcd \geq 0
+\end{gather*}
+$\Leftrightarrow$
+\begin{gather*}
+2abcd \leq a^2 b^2 + c^2 d^2
+\end{gather*}
+By adding the same terms on both hand sides,
+\begin{gather*}
+a^2 c^2 + b^2 d^2 + 2abcd \leq a^2 b^2 + a^2 c^2 + b^2 d^2 + c^2 d^2
+\end{gather*}
+$\Leftrightarrow$
+\begin{gather*}
+(ac+bd)^2 \leq (a^2 + c^2)(b^2 + d^2)
+\end{gather*}
+$\Rightarrow$
+\begin{gather*}
+ac+bd \leq |ac+bd| \leq \sqrt{(a^2 + c^2)(b^2 + d^2)} = \sqrt{(a^2 + c^2)} \cdot \sqrt{(b^2 + d^2)}
+\end{gather*}
+From the above, the statement is true.~$\blacksquare$
+
+\section*{Problem.2}
+\underline{\textit{Proof}}: Let $x, y, z \in \mathbb{Z}$.
+Here, $(x-y) + (y-z) = x-z$, also $x-z,x-y,y-z \in \mathbb{R}$. By applying the triangle inequality above as $a = x-y,~b = y-z$, we get
+\begin{gather*}
+|x-z| \leq |x-y| + |y-z|. ~\blacksquare
+\end{gather*}
+
+\section*{Problem.3}
+\underline{\textit{Proof}}: Let $a, b \in \mathbb{R} ~s.t.~ a > 0,~b > 0$.\\[1em]
+Since the square of any real number is non-negative, observe
+\begin{gather*}
+(a-b)^2 = a^2 + b^2 - 2ab \geq 0
+\end{gather*}
+$\Leftrightarrow$
+\begin{gather*}
+a^2 + b^2 \geq 2ab
+\end{gather*}
+$\Leftrightarrow$
+\begin{gather*}
+\frac{a^2 + b^2}{ab} \geq 2 ~~(\because ab > 0)
+\end{gather*}
+$\Leftrightarrow$
+\begin{gather*}
+\frac{a}{b} + \frac{b}{a} \geq 2
+\end{gather*}
+From the above, the statement is true.~$\blacksquare$\\[1em]
+By following the proof above backwards as a equation, immediately we see that
+\begin{gather*}
+\frac{a}{b} + \frac{b}{a} = 2 \Leftrightarrow (a-b)^2 = 0 \Leftrightarrow a = b
+\end{gather*}
+Therefore, the complete solution set $U = \{(a,b)~|~ \forall (a, b) \in \mathbb{R}^2 ~s.t.~ a>0,~b>0,~a=b\}$.
+
+
+\section*{Problem.4}
+\underline{\textit{Proof}}: Let $A$ and $B$ be sets.\\[1em]
+($\Leftarrow$)\\[1em]
+Suppose $A = B$, by definition, $\forall x \in A,~ x \in B$ and $\forall x \in B,~ x \in A$.\\
+We prove $(A \cup B) \subseteq (A \cap B)$ and $(A \cup B) \supseteq (A \cap B)$.\\[1em]
+($\subseteq$) Let $x \in (A \cup B)$.\\
+\underline{\textit{Case $1$}}: $x \in A$. Then $x \in B ~(\because A = B)$. Therefore, $x \in (A \cap B)$.\\
+\underline{\textit{Case $2$}}: $x \in B$. Then $x \in A ~(\because A = B)$. Therefore, $x \in (A \cap B)$.\\
+Thus, $(A \cup B) \subseteq (A \cap B)$.\\[1em]
+($\supseteq$) Let $x \in (A \cap B)$. By definition, $x \in A$ and $x \in B$. Therefore, $x \in (A \cup B)$.\\
+Thus, $(A \cup B) \supseteq (A \cap B)$.\\[1em]
+So, $(A \cup B) = (A \cap B)$.\\[1em]
+($\Rightarrow$)\\[1em]
+Suppose $(A \cup B) = (A \cap B)$. We prove $A \subseteq B$ and $A \supseteq B$.\\[1em]
+($\subseteq$) $\forall x \in A \subseteq (A \cup B) = (A \cap B)$. Therefore, $x \in B$, $A \subseteq B$.\\[1em]
+($\supseteq$) $\forall x \in B \subseteq (A \cup B) = (A \cap B)$. Therefore, $x \in A$, $A \supseteq B$.\\[1em]
+So, $A = B$.\\[1em]
+From the above, the statement is true.~$\blacksquare$
+
+\section*{Problem.5}
+We prove that 
+\begin{gather*}
+(A \times B) \cap (B \times A) = \emptyset \Leftrightarrow  A \cap B = \emptyset
+\end{gather*}
+\underline{\textit{Proof}}: Let $A$ and $B$ be sets.\\[1em]
+($\Leftarrow$)\\[1em]
+Suppose $A \cap B = \emptyset$, by definition, $\forall x \in A$, $x \notin B$, and $\forall y \in B$, $y \notin A$.\\
+Let $a \in (A \times B)$, then $\exists x \in A, \exists y \in B,~ s.t.~ a = (x,y)$, but $a \notin (B \times A)$, since $x \notin B$, and $y \notin A$.\\ Similarly, let $b \in (B \times A)$, then $\exists y \in B, \exists x \in A,~ s.t.~ b = (y,x)$, but $b \notin (A \times B)$, since $y \notin A$, and $x \notin B$.\\
+Therefore, $(A \times B) \cap (B \times A) = \emptyset$.\\[1em]
+($\Rightarrow$)\\[1em]
+Suppose $(A \times B) \cap (B \times A) = \emptyset$. Let $x \in A, y \in B$, then $\exists a \in (A \times B) ~s.t.~ a = (x,y)$, and also, $\exists b \in (B \times A) ~s.t.~ b = (y, x)$. However, since $(A \times B) \cap (B \times A) = \emptyset$, $a \neq b \Rightarrow x \neq y$. So $x \notin B, y \notin A$, $A \cap B = \emptyset$.\\[1em]
+From the above, the statement is true.~$\blacksquare$
+
+\section*{Problem.6}
+\underline{\textit{Proof}}: Let $A,~B,~C$ and $D$ be sets.\\[1em]
+We prove $(A \times B) \cap (C \times D) \subseteq (A \cap C) \times (B \cap D)$ and $(A \times B) \cap (C \times D) \supseteq (A \cap C) \times (B \cap D)$.\\[1em]
+($\subseteq$)\\[1em]
+Let $w \in (A \times B) \cap (C \times D)$, by definition, $w \in (A \times B)$, and $w \in (C \times D)$. By definition, $\exists x \in A, \exists y \in B ~s.t.~ w = (x,y)$, but also $x \in C, y \in D ~(\because w \in (C \times D))$. Therefore, $x \in A$ and $x \in C$, also $y \in B$ and $y \in D$. Thus, $w = (x, y) \in (A \cap C) \times (B \cap D)$, $(A \times B) \cap (C \times D) \subseteq (A \cap C) \times (B \cap D)$.\\[1em]
+($\supseteq$)\\[1em]
+Let $w \in (A \cap C) \times (B \cap D)$, by definition, $\exists x \in (A \cap C), \exists y \in (B \cap D) ~s.t.~ w = (x,y)$. By definition, $x \in A$ and $x \in C$, also $y \in B$ and $y \in D$. Therefore, $w = (x, y) \in (A \times B)$ and $w = (x, y) \in (C \times D)$. Thus, $w \in (A \times B) \cap (C \times D)$, $(A \times B) \cap (C \times D) \supseteq (A \cap C) \times (B \cap D)$.\\[1em]
+From the above, the statement is true.~$\blacksquare$
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
