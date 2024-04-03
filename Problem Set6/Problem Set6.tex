@@ -1,0 +1,217 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{derivative}
+\usepackage{bm}
+\usepackage{comment}
+\usepackage{cancel}
+\usepackage{xcolor}
+
+
+\begin{document}
+\title{Mathematical Proof: Problem Set 6}
+\author{Koichiro Takahashi}
+\maketitle 
+
+\section*{Problem.1}
+\underline{\textit{Proof}}: Let $a \in \mathbb{(R-Q)},~ b \in \mathbb{Q} ~s.t.~ b \neq 0$.\\[1em]
+Assume, to the contrary, that $ab \in \mathbb{Q}$. By definition,
+\begin{gather*}
+\exists p, q \in \mathbb{Z} ~s.t.~ q \neq 0,~ab = \frac{p}{q}
+\end{gather*}
+Also, since $b$ is a nonzero rational number,
+\begin{gather*}
+\exists r, s \in \mathbb{Z} ~s.t.~ r \neq 0,~s \neq 0,~b = \frac{r}{s}
+\end{gather*}
+Therefore,
+\begin{gather*}
+ab = \frac{p}{q} = a \frac{r}{s}
+\end{gather*}
+$\Leftrightarrow$
+\begin{gather*}
+a = \frac{p s}{q r} \in \mathbb{Q}
+\end{gather*}
+which is a contradiction since $a \notin \mathbb{Q}$.\\[1em]
+From the above, the statement is true.~$\blacksquare$
+
+\section*{Problem.2}
+\underline{\textit{Proof}}: We know that $\sqrt{2}, \sqrt{3} \in \mathbb{(R-Q)}$.\\[1em]
+Assume, to the contrary, that $\sqrt{2} + \sqrt{3} \in \mathbb{Q}$. By definition,
+\begin{gather*}
+\exists r \in \mathbb{Q} ~s.t.~ ~~\sqrt{2} + \sqrt{3} = r
+\end{gather*}
+So,
+\begin{gather*}
+\sqrt{2} = r - \sqrt{3}
+\end{gather*}
+By squaring the both hand sides,
+\begin{gather*}
+2 = r^2 - 2 \sqrt{3} r + 3
+\end{gather*}
+$\Leftrightarrow$
+\begin{gather*}
+\sqrt{3} \cdot 2 r = r^2 + 1
+\end{gather*}
+Here, $r > 0$, so
+\begin{gather*}
+\sqrt{3} = \frac{(r^2 + 1)}{2 r}
+\end{gather*}
+Since $r^2 + 1, 2r \in \mathbb{Q}$,
+\begin{gather*}
+\exists p, q, s, l \in{Z} ~s.t.~ q \neq 0,~l \neq 0,~ r^2 + 1 = \frac{p}{q},~ 2 r = \frac{s}{l}
+\end{gather*}
+Again, $r > 0$, so $s \neq 0$. Therefore,
+\begin{gather*}
+\sqrt{3} = \frac{(r^2 + 1)}{2 r} = \frac{pl}{qs} \in \mathbb{Q}
+\end{gather*}
+which is a contradiction since $\sqrt{3} \notin \mathbb{Q}$.\\[1em]
+From the above, the statement is true.~$\blacksquare$
+
+\section*{Problem.3}
+\underline{\textit{Proof}}: Let $a, b, c \in \mathbb{R}$.\\[1em]
+Assume, to the contrary, that $\exists a, b, c ~s.t.~ a+b+c = ab = ac = bc = abc, a \neq b, b \neq c, c \neq a$.\\[1em]
+Since, $a$, $b$, and $c$ are symmetric, and also $a \neq b, b \neq c, c \neq a$,  we can split by cases if $a = 0, b \neq 0, c \neq 0 $ or $a \neq 0, b \neq 0, c \neq 0$.\\[1em]
+\underline{\textit{Case $1$}}: $a = 0, b \neq 0, c \neq 0$.\\[1em]
+Then $ab = ac = 0$,  but $bc \neq 0$, which is a contradiction  since $ab = bc$.\\[1em]
+\underline{\textit{Case $2$}}: $a \neq 0, b \neq 0, c \neq 0$.\\[1em]
+Then $abc = bc \Leftrightarrow a = 1$, and $abc = ca \Leftrightarrow b = 1$. Thus, $a = b$ which is a contradiction since $a \neq b$.\\[1em]
+From the above, the statement is true.~$\blacksquare$.
+
+
+\section*{Problem.4}
+\underline{\textit{Proof}}: Let $a, b, c, d \in \mathbb{R}$.\\[1em]
+We know that the product of  two real numbers is positive if and only if both numbers are positive or both are negative.\\[1em]
+Assume, to the contrary, that $\exists a, b, c, d ~s.t.~ ab, ac, ad, bc, bd, cd$ are all negative, or the five numbers among $ab, ac, ad, bc, bd, cd$ are negative.\\[1em]
+\underline{\textit{Case $1$}}: $ab, ac, ad, bc, bd, cd$ are all negative.\\[1em]
+Since $a,b,c,d$ are symmetric, without loss of generality, we can assume that $a < 0$ and $b > 0$, since $ab < 0$. Therefore, since $bc < 0$, $c < 0$. Then $ac > 0$, which is a contradiction since $ac < 0$.\\[1em]
+\underline{\textit{Case $2$}}: The five numbers among $ab, ac, ad, bc, bd, cd$ are negative.\\[1em]
+Since $a,b,c,d$ are symmetric, without loss of generality, we can assume that $cd > 0$. Also, we can assume that $a < 0$ and $b > 0$, since $ab < 0$. Therefore, since $bc < 0$, $c < 0$. Then $ac > 0$, which is a contradiction since $ac < 0$.\\[1em]
+From the above, the statement is true.~$\blacksquare$
+
+\section*{Problem.5}
+\underline{\textit{Proof}}: Let $a, n \in \mathbb{Z} ~s.t.~ a \geq 2, n \geq 1$.\\[1em]
+Assume, to the contrary, that $\exists a, n ~s.t.~ a^2 + 1 = 2^n$.\\[1em]
+\underline{\textit{Case $1$}}: $a \in \mathbb{O}$.\\[1em]
+Then
+\begin{gather*}
+\exists k \in \mathbb{Z} ~s.t.~ a = 2k + 1
+\end{gather*}
+Note that $a \geq 2$, so that $k \geq 1$. Therefore,
+\begin{gather*}
+a^2 + 1 = (2k + 1)^2 + 1 = 4k^2 + 4k + 2 = 2(2k^2 + 2k + 1) = 2^n
+\end{gather*}
+$\Leftrightarrow$
+\begin{gather*}
+2(k^2 + k) + 1 = 2^{n-1}
+\end{gather*}
+Note that $n \geq 1$.\\[1em]
+When $n = 1$, $2^{n-1} = 1 = 2(k^2 + k) + 1 > 1$, which is a contradiction.\\[1em]
+When $n > 1$, then $2^{n-1} = 2(k^2 + k) + 1 \in \mathbb{O}$ which is a contradiction since $2^{n-1} \in \mathbb{E}$ and $2^{n-1} \notin \mathbb{O}$.\\[1em]
+\underline{\textit{Case $2$}}: $a \in \mathbb{E}$.\\[1em]
+Then
+\begin{gather*}
+\exists l \in \mathbb{Z} ~s.t.~ a = 2l
+\end{gather*}
+Note that $a \geq 2$, so that $l \geq 1$. Therefore,
+\begin{gather*}
+a^2 + 1 = (2l)^2 + 1 = 2(2 l^2) + 1 = 2^n
+\end{gather*}
+When $n = 1$, $2^{n-1} = 1 = 2(2 l^2) + 1 > 1$, which is a contradiction.\\[1em]
+When $n > 1$, then $2^{n-1} = 2(2 l^2) + 1 \in \mathbb{O}$ which is a contradiction since $2^{n-1} \in \mathbb{E}$ and $2^{n-1} \notin \mathbb{O}$.\\[1em]
+From the above, the statement is true.~$\blacksquare$
+
+\section*{Problem.6}
+\underline{\textit{Proof}}: Let $a, b \in \mathbb{R}$.\\[1em]
+Assume, to the contrary, that $\exists a, b \in (0,1) ~s.t.~ 4a(1-b) > 1$ and $4b(1-a) > 1$.\\[1em]
+Then, $a > 0$, $b > 0$, so
+\begin{gather*}
+\left\{
+\begin{array}{l}
+    4a(1 - b) > 1 \\[1em]
+    4b(1 - a) > 1
+\end{array}
+\right.
+\end{gather*}
+$\Leftrightarrow$
+\begin{gather*}
+\left\{
+\begin{array}{l}
+    1 - b > \frac{1}{4a} \\[1em]
+    1 - a > \frac{1}{4b}
+\end{array}
+\right.
+\end{gather*}
+$\Leftrightarrow$
+\begin{gather*}
+\left\{
+\begin{array}{l}
+    b < 1 - \frac{1}{4a}\\[1em]
+    a < 1 - \frac{1}{4b}
+\end{array}
+\right.
+\end{gather*}
+Also, since $0 < a < 1$, $0 < b < 1$,
+\begin{gather*}
+\left\{
+\begin{array}{l}
+    4a > \frac{1}{1-b} \\[1em]
+    4b > \frac{1}{1-a}
+\end{array}
+\right.
+\end{gather*}
+\begin{gather*}
+\left\{
+\begin{array}{l}
+    a > \frac{1}{4(1-b)} \\[1em]
+    b > \frac{1}{4(1-a)}
+\end{array}
+\right.
+\end{gather*}
+Therefore,
+\begin{gather*}
+\left\{
+\begin{array}{l}
+    \frac{1}{4(1-b)} < 1 - \frac{1}{4b} \\[1em]
+    \frac{1}{4(1-a)} < 1 - \frac{1}{4a}
+\end{array}
+\right.
+\end{gather*}
+By transforming one of the equations above (note that $1 - a > 0$, $a > 0$),
+\begin{align*}
+\frac{1}{4(1-a)} < 1 - \frac{1}{4a} &\Leftrightarrow \frac{1}{4} < 1 - a - \frac{1-a}{4a}\\[1em]
+&\Leftrightarrow \frac{a}{4} < a - a^2 - \frac{1}{4} + \frac{a}{4}\\[1em]
+&\Leftrightarrow a^2 - a + \frac{1}{4} < 0\\[1em]
+&\Leftrightarrow \left(a - \frac{1}{2}\right)^2 < 0
+\end{align*}
+which is a contradiction since $\forall x \in \mathbb{R}, x^2 \geq 0$, so that $\left(a - \frac{1}{2}\right)^2 \in \mathbb{R}, \left(a - \frac{1}{2}\right)^2 \geq 0$.\\[1em]
+From the above, the statement is true.~$\blacksquare$
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
