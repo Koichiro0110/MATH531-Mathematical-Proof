@@ -1,0 +1,292 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{derivative}
+\usepackage{bm}
+\usepackage{comment}
+\usepackage{cancel}
+\usepackage{xcolor}
+
+
+\begin{document}
+\title{Mathematical Proof: Problem Set 7}
+\author{Koichiro Takahashi}
+\maketitle 
+
+\section*{Problem.1}
+A formula
+\begin{gather*}
+1 + 4 + 7 + \cdots + (3n-2) = \sum_{k = 1}^{n} (3k - 2) = \frac{n}{2} (1 + 3n - 2) = \frac{n}{2} (3n - 1)
+\end{gather*}
+Therefore, we define the open sentence
+\begin{gather*}
+P(n):~ 1 + 4 + 7 + \cdots + (3n-2) = \frac{n}{2} (3n - 1)
+\end{gather*}
+\underline{\textit{Proof}}: We employ induction.\\[1em]
+Since
+\begin{gather*}
+\frac{1}{2} (3\cdot 1 - 1) = 1
+\end{gather*}
+the statement $P(1)$ is true.\\
+For $k \in \mathbb{N}$, assume that $P(k)$ is true, so that
+\begin{gather*}
+1 + 4 + 7 + \cdots + (3k-2) = \sum_{l = 1}^{k} (3l - 2) = \frac{k}{2} (3k - 1)
+\end{gather*}
+is true. Then,
+\begin{align*}
+1 + 4 + 7 + \cdots + (3k-2) + (3(k+1)-2) &= \sum_{l = 1}^{k} (3l - 2) + (3k+1)\\[1em]
+&= \frac{k}{2} (3k - 1) + 3k + 1
+\end{align*}
+Here,
+\begin{align*}
+\frac{k}{2} (3k - 1) + 3k + 1
+&= \frac{3 k^2}{2} - \frac{k}{2} + 3k + 1\\[1em]
+&= \frac{3 k^2}{2} + \frac{5k}{2} + 1\\[1em]
+&= \frac{(k+1)}{2} (3k+2)
+\end{align*}
+Therefore,
+\begin{align*}
+1 + 4 + 7 + \cdots + (3k-2) + (3(k+1)-2) = \frac{(k+1)}{2} (3k+2)
+\end{align*}
+so that $P(k+1)$ is true. By the Principle of Mathematical Induction, $P(n)$ is true for every positive integer.$\blacksquare$
+
+\section*{Problem.2}
+The open sentence
+\begin{gather*}
+P(n):~ 2! \cdot 4! \cdot \cdot 6! \dots (2n)! \geq ((n+1)!)^n
+\end{gather*}
+\underline{\textit{Proof}}: We employ induction.\\[1em]
+Since
+\begin{gather*}
+(2\cdot1)! \geq ((1+1)!)^1 = 2
+\end{gather*}
+the statement $P(1)$ is true.\\
+For $k \in \mathbb{N}$, assume that $P(k)$ is true, so that
+\begin{gather*}
+2! \cdot 4! \cdot \cdot 6! \dots (2k)! = \prod_{l=1}^{k} (2l)! \geq ((k+1)!)^k
+\end{gather*}
+is true. Then,
+\begin{align*}
+2! \cdot 4! \cdot \cdot 6! \dots (2k)! \cdot (2(k+1))! &= \left[\prod_{l=1}^{k} (2l)! \right] (2(k+1))!\\[1em]
+&\geq ((k+1)!)^k \cdot (2(k+1))! ~~\left(\because (2(k+1))! > 0\right)\\[1em]
+\end{align*}
+Here,
+\begin{align*}
+(2(k+1))! &= (2k+2) \cdot (2k+1) \dots (k+2) \cdot (k+1) \cdot k \cdot (k-1) \dots 1\\[1em]
+& > (k + 2)^{k} \cdot (k + 2) \cdot (k+1) \cdot k \cdot (k-1) \dots 1 ~~\left(\because 2k + 2 > 2k + 1 > \dots > k + 3 > k + 2 > 1\right)\\[1em]
+&= (k + 2)^{k} \cdot (k+2)!
+\end{align*}
+Therefore,
+\begin{align*}
+2! \cdot 4! \cdot \cdot 6! \dots (2k)! \cdot (2(k+1))! &\geq ((k+1)!)^k \cdot (2(k+1))! \\[1em]
+&> ((k+1)!)^k \cdot (k + 2)^{k} \cdot (k+2)!\\[1em]
+&= ((k+2)!)^{k} \cdot (k+2)!\\[1em]
+&= ((k+2)!)^{k+1} = (((k+1)+1)!)^{k+1}
+\end{align*}
+so that $P(k+1)$ is true. By the Principle of Mathematical Induction, $P(n)$ is true for every positive integer.$\blacksquare$
+
+\section*{Problem.3}
+For every real number $x > -1$,
+the open sentence
+\begin{gather*}
+P(n):~ (1+x)^n \geq 1 + nx
+\end{gather*}
+\underline{\textit{Proof}}: We employ induction.\\[1em]
+Since
+\begin{gather*}
+1 + x \geq 1 + x
+\end{gather*}
+the statement $P(1)$ is true.\\
+For $k \in \mathbb{N}$, assume that $P(k)$ is true, so that
+\begin{gather*}
+(1+x)^k \geq 1 + kx
+\end{gather*}
+is true. Then,
+\begin{align*}
+(1+x)^{k} (1+x) \geq (1 + kx) (1+x) ~~\left(\because 1 + x > 0\right)
+\end{align*}
+$\Rightarrow$
+\begin{align*}
+(1+x)^{k+1} \geq (1 + kx) (1+x) = 1 + (k+1)x + k x^2 \geq 1 + (k+1)x ~~\left(\because k x^2 \geq 0\right)
+\end{align*}
+Therefore,
+\begin{align*}
+(1+x)^{k+1} \geq 1 + (k+1)x
+\end{align*}
+so that $P(k+1)$ is true. By the Principle of Mathematical Induction, $P(n)$ is true for every positive integer.$\blacksquare$
+
+\section*{Problem.4}
+The open sentence
+\begin{gather*}
+P(n):~ 81~|~\left(10^{n+1} - 9n -10 \right)
+\end{gather*}
+\underline{\textit{Proof}}: We employ induction.\\[1em]
+Since
+\begin{gather*}
+10^{1+1} - 9 \cdot 1 -10 = 100 - 9 -10 = 81 \cdot 1
+\end{gather*}
+So, note that $1 \in \mathbb{Z}$,
+\begin{gather*}
+81~|~\left( 10^{1+1} - 9 \cdot 1 -10 \right)
+\end{gather*}
+the statement $P(1)$ is true.\\
+For $k \in \mathbb{N}$, assume that $P(k)$ is true, so that
+\begin{gather*}
+81~|~\left(10^{k+1} - 9k -10 \right)
+\end{gather*}
+is true. Then,
+\begin{align*}
+\exists m \in \mathbb{Z} ~s.t.~ 10^{k+1} - 9k - 10 = 81 \cdot m
+\end{align*}
+$\Rightarrow$
+\begin{align*}
+10^{(k+1)+1} - 9(k+1) -10 &= 10 \cdot 10^{k+1} - 9k - 9 -10\\[1em]
+&= \left(10^{k+1} - 9k - 10\right) + 9\cdot 10^{k+1} - 9\\[1em]
+&= 81 \cdot m + 9 \left(10^{k+1} - 1\right) + (-81k - 81) - (- 81k - 81)\\[1em]
+&= 81 \cdot m + 9 \left(10^{k+1} - 9k - 10\right) + 81(k + 1)\\[1em]
+&= 81 \cdot m + 9 \cdot 81 \cdot m + 81(k + 1)\\[1em]
+& = 81\left(10  m + k + 1\right)
+\end{align*}
+Therefore, since $\left(10  m + k + 1 \right) \in \mathbb{Z}$
+\begin{align*}
+81~|~\left(10^{(k+1)+1} - 9(k+1) -10 \right)
+\end{align*}
+so that $P(k+1)$ is true. By the Principle of Mathematical Induction, $P(n)$ is true for every positive integer.$\blacksquare$
+
+\section*{Problem.5}
+A sequence $\{ a_n \} $ is given by
+\begin{gather*}
+a_1 = 1, a_2 = 2; a_n = a_{n-1} + 2 a_{n-2}
+\end{gather*}
+The experiment
+\begin{gather*}
+a_1 = 1,~ a_2 = 2, ~a_3 = 4,~ a_4 = 8,~ a_5 = 16,~\dots
+\end{gather*}
+So the conjecture
+\begin{gather*}
+P(n):~a_n = 2^{n-1}
+\end{gather*}
+\underline{\textit{Proof}}: We employ induction.\\[1em]
+Since
+\begin{gather*}
+2 ^{1-1} = 1
+\end{gather*}
+the statement $P(1)$ is true.\\
+Also,
+\begin{gather*}
+2 ^{2-1} = 2
+\end{gather*}
+the statement $P(2)$ is true.\\
+For $k \in \mathbb{N} ~s.t.~ k \geq 2$, assume that $P(k-1)$ and $P(k)$ is true, so that
+\begin{gather*}
+a_{k-1} = 2^{(k-1)-1} = 2^{k-2},~ a_k = 2^{k-1}
+\end{gather*}
+is true. Then,
+\begin{gather*}
+a_{k+1} = a_{k} + a_{k-1} = 2^{k-1} + 2 \cdot 2^{k-2} = 2 \cdot 2^{k-1} = 2^{(k+1)-1}
+\end{gather*}
+so that $P(k+1)$ is true. By the Principle of Mathematical Induction, $P(n)$ is true for every positive integer.$\blacksquare$
+
+\section*{Problem.6}
+The sequence of \textit{Fibonacci numbers}, $\{ F_n \} $ is given by
+\begin{gather*}
+F_1 = 1, F_2 = 1, F_n = F_{n-1} + F_{n-2}
+\end{gather*}
+$(a)$
+The open sentence
+\begin{gather*}
+P(n): 2 \mid F_n \Leftrightarrow 3 \mid n
+\end{gather*}
+\underline{\textit{Proof}}: We employ induction. Let $n \in \mathbb{N}$.\\[1em]
+Since $F_1 = 1,~ 2 \nmid 1$, and $3 \nmid 1$, so the statement $P(1)$ is true.($\because$ the Law of Hypothesis)\\
+Similarly, since $F_2 = 1,~ 2 \nmid 1$, and $3 \nmid 2$, so the statement $P(2)$ is true.($\because$ the Law of Hypothesis)\\[1em]
+Similarly, since $F_3 = F_1 + F_2 = 2,~ 2 \mid 2$, and $3 \nmid 3$, so the statement $P(2)$ is true.\\[1em]
+For $k \in \mathbb{N} ~s.t.~ k \geq 3$, assume that $P(k-2)$, $P(k-1)$, and $P(k)$ is true, so that 
+\begin{gather*}
+2 \mid F_{k-2} \Leftrightarrow 3 \mid (k-2)\\[1em]
+2 \mid F_{k-1} \Leftrightarrow 3 \mid (k-1)\\[1em]
+2 \mid F_k \Leftrightarrow 3 \mid k
+\end{gather*}
+Note that $F_{k+1} = F_{k} + F_{k-1} \in \mathbb{Z} ~~\left( \because F_{k}, F_{k-1} \in \mathbb{Z} \right)$.\\
+Here,
+\begin{align*}
+F_{k+1} &= F_{k} + F_{k-1}\\[1em]
+&= 2 F_{k-1} + F_{k-2}
+\end{align*}
+$\Leftrightarrow$
+\begin{gather*}
+2 F_{k-1} = F_{k+1} - F_{k-2} \in \mathbb{E}
+\end{gather*}
+By Theorem 3.16, $F_{k+1}$ and $F_{k-2}$ are of the same parity, i.e. $2 \mid F_{k+1} \Leftrightarrow 2 \mid F_{k-2}$.\\
+Now, observe that
+\begin{align*}
+2 \mid F_{k+1} &\Leftrightarrow 2 \mid F_{k-2}\\[1em]
+&\Leftrightarrow 3 \mid (k-2) ~~\left( \because \mathrm{assumption}\right)\\[1em]
+&\Leftrightarrow 3 \mid (k-2 + 3) \Leftrightarrow 3 \mid (k + 1)
+\end{align*}
+so that $P(k+1)$ is true. By the Principle of Mathematical Induction, $P(n)$ is true for every positive integer.$\blacksquare$\\[1em]
+$(b)$
+\underline{\textit{Proof}}: We employ induction.\\[1em]
+Since
+\begin{gather*}
+2^{1-1} F_1 =  1 \cdot 1 \equiv 1 ~(\mathrm{mod}~5)
+\end{gather*}
+the statement $P(1)$ is true.\\
+Also,
+\begin{gather*}
+2^{2-1} F_2 =  2 \cdot 1 \equiv 2 ~(\mathrm{mod}~5)
+\end{gather*}
+the statement $P(2)$ is true.\\
+For $k \in \mathbb{N} ~s.t.~ k \geq 3$, assume that $P(k-1)$ and $P(k)$ is true, so that
+\begin{gather*}
+2^{(k-1)-1} F_{k-1} = 2^{k-2} F_{k-1} \equiv k - 1 ~(\mathrm{mod}~5)
+\end{gather*}
+and 
+\begin{gather*}
+2^{k-1} F_{k} \equiv k ~(\mathrm{mod}~5)
+\end{gather*}
+is true. Then,
+\begin{align*}
+2^{(k+1)-1} F_{k+1} &= 2^{k} \left(F_{k-1} + F_{k}\right) = 4 \cdot 2^{k-2}F_{k-1} + 2 \cdot 2^{k-1}F_{k}\\[1em]
+&\equiv 4 \cdot (k-1) + 2 \cdot k \equiv 6k - 4 \equiv 5k - 5 + k + 1 \equiv k + 1 ~(\mathrm{mod}~5)
+\end{align*}
+so that $P(k+1)$ is true. By the Principle of Mathematical Induction, $P(n)$ is true for every positive integer.$\blacksquare$
+
+\section*{Problem.7}
+\underline{\textit{Proof}}: Use the method of minimum counterexample. Let $r \in \mathbb{R} ~s.t.~ r \neq 0, r + \frac{1}{r} \in \mathbb{Z}$, so that
+\begin{gather*}
+\exists m_1 \in \mathbb{Z} ~s.t.~ r + \frac{1}{r} = m_1
+\end{gather*}
+Then, we immediately show that
+\begin{gather*}
+r^2 + \frac{1}{r^2} = \left( r + \frac{1}{r} \right) \left( r + \frac{1}{r} \right) - 2 = m_1^2 - 2 \in \mathbb{Z}
+\end{gather*}
+Assume to the contrary that
+\begin{gather*}
+S = \{ m \in \mathbb{N} \mid r^m + \frac{1}{r^m} \notin \mathbb{Z}\} \neq \emptyset
+\end{gather*}
+By the Well-Ordering Principle, $\exists \mu \in S ~s.t.~ \forall x \in S, 2 < \mu \leq x$.
+By the definition, (and $3 \leq \mu$,) $\mu$ satisfies $r^{\mu} + \frac{1}{r^{\mu}} \notin \mathbb{Z}$, and
+\begin{gather*}
+\exists m_{\mu-1} \in \mathbb{Z} ~s.t.~ r^{\mu - 1} + \frac{1}{r^{\mu - 1}} = m_{\mu-1}
+\end{gather*}
+also 
+\begin{gather*}
+\exists m_{\mu-2} \in \mathbb{Z} ~s.t.~ r^{\mu - 2} + \frac{1}{r^{\mu - 2}} = m_{\mu-2}
+\end{gather*}
+Then, 
+\begin{gather*}
+\left(r^{\mu - 1} + \frac{1}{r^{\mu - 1}}\right) \left( r + \frac{1}{r} \right) = r^{\mu} + \frac{1}{r^{\mu}} + r^{\mu-2} + \frac{1}{r^{\mu - 2}}
+\end{gather*}
+$\Leftrightarrow$
+\begin{align*}
+r^{\mu} + \frac{1}{r^{\mu}} &= \left(r^{\mu - 1} + \frac{1}{r^{\mu - 1}}\right) \left( r + \frac{1}{r} \right) -\left(r^{\mu-2} + \frac{1}{r^{\mu - 2}}\right)\\[1em]
+&= m_{\mu - 1} m_{1} - m_{\mu - 2} \in \mathbb{Z}
+\end{align*}
+which is a contradiction since $r^{\mu} + \frac{1}{r^{\mu}} \notin \mathbb{Z}$.~$\blacksquare$
+
+\end{document}
