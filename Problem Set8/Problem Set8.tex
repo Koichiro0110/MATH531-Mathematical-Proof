@@ -1,0 +1,202 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{derivative}
+\usepackage{bm}
+\usepackage{comment}
+\usepackage{cancel}
+\usepackage{xcolor}
+
+
+\begin{document}
+\title{Mathematical Proof: Problem Set 8}
+\author{Koichiro Takahashi}
+\maketitle
+
+\section*{Problem.1}
+Given a relation $\mathcal{R}$ on a set $A$, the inverse relation is defined by
+\begin{gather*}
+\mathcal{R}^{-1} = \{ (b,a) \in (A \times A) ~|~ (a,b) \in \mathcal{R} \}
+\end{gather*}
+Since $\mathcal{R} \subseteq (A \times A)$, the cardinality of $\mathcal{R}$ has an upper bound given by $|\mathcal{R}| \leq |A \times A|$. \\
+First, we show a lemma
+\begin{center}
+Lemma1: $\mathcal{R} \cap \mathcal{R}^{-1} = \emptyset \Leftrightarrow \forall (a,b) \in \mathcal{R}, (b,a) \notin \mathcal{R}$.
+\end{center}
+\underline{\textit{Proof}}: Let $\mathcal{R}$ be a relation on a set $A$, and $\mathcal{R}^{-1}$ is its inverse relation.\\[1em]
+$\left( \Rightarrow \right)$ Suppose $\mathcal{R} \cap \mathcal{R}^{-1} = \emptyset$. We prove by contradiction.\\[1em]
+Assume, to the contrary, that $\exists (a,b) \in \mathcal{R} ~s.t.~ (b,a) \in \mathcal{R}$. Then immediately, by definition of the inverse relation, $(a, b) \in \mathcal{R}^{-1}$. Therefore, $(a, b) \in \left( \mathcal{R} \cap \mathcal{R}^{-1} \right)$, which is a contradiction since $\mathcal{R} \cap \mathcal{R}^{-1} = \emptyset$. \\[1em]
+$\left( \Leftarrow \right)$ Suppose $\forall (a,b) \in \mathcal{R}, (b,a) \notin \mathcal{R}$.\\
+We prove by contradiction. Assume, to the contrary, that $\mathcal{R} \cap \mathcal{R}^{-1} \neq \emptyset$. Then,
+\begin{gather*}
+\exists (x,y) \in (\mathcal{R} \cap \mathcal{R}^{-1})
+\end{gather*}
+Therefore, $(x,y) \in \mathcal{R}$, but also $(x, y) \in \mathcal{R}^{-1}$. Then, by definition of the inverse relation, $(x, y) \in \mathcal{R}^{-1}$, which is a contradiction since $\forall (a,b) \in \mathcal{R}, (b,a) \notin \mathcal{R}$.\\[1em]
+From the above, the statement is true.~$\blacksquare$\\[1em]
+Now, we prove the conjecture that $|\mathcal{R}_{max}| = 6$.\\[1em]
+\underline{\textit{Proof}}:
+Suppose $A$ is a set with exactly 4 elements, which defined in general by
+\begin{gather*}
+A = \{ x,y,z,w \}
+\end{gather*}
+where $x,y,z,w$ are distinct elements.\\
+Without loss of generality, by using Lemma 1, $\mathcal{R}_{max}$, which has a largest cardinality in the possible $\mathcal{R} \subseteq  (A \times A)$ is given by
+\begin{gather*}
+\mathcal{R}_{max} = \{ (x,y), (x,z), (x,w), (y,z), (y,w), (z,w) \}
+\end{gather*}
+Therefore, $|\mathcal{R}_{max}| = 6$.~$\blacksquare$
+
+\section*{Problem.2}
+Here, $A = \{ 1,2,3,4 \}$. Let $\mathcal{R}$ be a relation on a set $A$, which satisfy a certain condition on each problem.\\[1em]
+$(a)$\\
+\begin{gather*}
+\mathcal{R} = \{ (1,1),(1,2),(1,3),(2,1),(2,2),(3,1),(3,3),(4,4) \}
+\end{gather*}
+$(b)$\\
+\begin{gather*}
+\mathcal{R} = \{ (1,1),(1,2),(1,3),(2,2),(2,3),(3,3), (4,4) \}
+\end{gather*}
+$(c)$\\
+\begin{gather*}
+\mathcal{R} = \{ (1,1),(1,2),(2,1) \}
+\end{gather*}
+$(d)$\\
+\begin{gather*}
+\mathcal{R} = \{ (1,1),(1,2),(2,2),(2,3),(3,3), (4,4) \}
+\end{gather*}
+$(e)$\\
+\begin{gather*}
+\mathcal{R} = \{ (1,2),(2,1) \}
+\end{gather*}
+$(f)$\\
+\begin{gather*}
+\mathcal{R} = \{ (1,2) \}
+\end{gather*}
+
+
+\section*{Problem.3}
+Let $A = \{a, b, c\}$, and let $\mathcal{R}$ be a relation on $A$ such that $\mathcal{R}$ has none of the properties reflexive, symmetric and transitive.\\[1em]
+Now, we prove the conjecture that $|\mathcal{R}_{max}| = 7$
+\underline{\textit{Proof}}: Since $\mathcal{R} \subset \left( A \times A \right)$, any elements in possible relations $\mathcal{R}$ on $A$ is in $\left( A \times A \right)$\\[1em]
+Here,
+\begin{gather*}
+A \times A = \{ (a,a),(a,b),(a,c),(b,a),(b,b),(b,c),(c,a),(c,b),(c,c) \}
+\end{gather*}
+which is an equivalence relation on $A$.\\
+To break its reflexivity, we remove $(c,c)$.\\
+Then, $\{ (a,a),(a,b),(a,c),(b,a),(b,b),(b,c),(c,a),(c,b) \}$, which still has its symmetry and transitivity.\\
+To break its symmetry and transitivity, we remove $(c,b)$.\\
+Then, $\{ (a,a),(a,b),(a,c),(b,a),(b,b),(b,c),(c,a) \}$, which still has its symmetry and transitivity. Note that $(c,a)$ and $(a,b)$ is in the modified relation.\\
+Therefore, we define $\mathcal{R}_{max}$ as below:
+\begin{gather*}
+\mathcal{R}_{max} = \{ (a,a),(a,b),(a,c),(b,a),(b,b),(b,c),(c,a) \}
+\end{gather*}
+and $\mathcal{R}_{max}$ gives the maximum number of a relation $\mathcal{R}$, where $|\mathcal{R}_{max}| = 7$.\\[1em]
+From the above, the statement is true.~$\blacksquare$
+
+\section*{Problem.4}
+$(a)$\\
+\underline{\textit{Proof}}: Let $\mathcal{R}_1, \mathcal{R}_2$ be equivalence relations on a set $A$.\\[1em]
+Since $\mathcal{R}_1$ and $\mathcal{R}_2$ are both equivalent relations, they are reflexive. Thus, $\forall a \in A, \exists (a,a) \in  (\mathcal{R}_1 \cap \mathcal{R}_2)$. Therefore, $\mathcal{R}_1 \cap \mathcal{R}_2$ is reflexive.\\[1em]
+Let $(a, b) \in ( \mathcal{R}_1 \cap \mathcal{R}_2) \subseteq \left( A \times A \right)$, where $a, b \in A$. By definition, $(a, b) \in \mathcal{R}_1$ and $(a, b) \in \mathcal{R}_2$. Since $\mathcal{R}_1$ and $\mathcal{R}_2$ are both equivalent relations, they are symmetric. Thus, $(b, a) \in \mathcal{R}_1$ and $(b, a) \in \mathcal{R}_2$. Therefore, $(b, a) \in ( \mathcal{R}_1 \cap \mathcal{R}_2)$, so that $\mathcal{R}_1 \cap \mathcal{R}_2$ is symmetric.\\[1em]
+Let $(a, b), (b, c) \in ( \mathcal{R}_1 \cap \mathcal{R}_2) \subseteq \left( A \times A \right)$, where $a, b, c \in A$. By definition, $(a, b) \in \mathcal{R}_1$ and $(a, b), (b, c) \in \mathcal{R}_2$. Since $\mathcal{R}_1$ and $\mathcal{R}_2$ are both equivalent relations, they are transitive. Thus, $(a, c) \in \mathcal{R}_1$ and $(a, c) \in \mathcal{R}_2$. Therefore, $(a, c) \in ( \mathcal{R}_1 \cap \mathcal{R}_2)$, so that $\mathcal{R}_1 \cap \mathcal{R}_2$ is transitive.\\[1em]
+From the above, $\mathcal{R}_1 \cap \mathcal{R}_2$ is an equivalence relation on $A$, so that the statement is true.~$\blacksquare$\\[1em]
+$(b)$\\
+\underline{\textit{Disproof}}: We disprove by counterexample.\\[1em]
+Let $A$ be a non-empty set defined by
+\begin{gather*}
+A = \{ 1,2,3 \}
+\end{gather*}
+Let $\mathcal{R}_1, \mathcal{R}_2$ be equivalence relations on a set $A$ given by
+\begin{gather*}
+\mathcal{R}_1 = \{ (1,1),(1,2),(2,1),(2,2),(3,3)\}
+\end{gather*}
+and
+\begin{gather*}
+\mathcal{R}_2 = \{ (1,1),(2,2),(2,3),(3,2),(3,3)\}
+\end{gather*}
+Then
+\begin{gather*}
+\mathcal{R}_1 \cup \mathcal{R}_2 = \{ (1,1),(1,2),(2,1),(2,2),(2,3),(3,2),(3,3)\}
+\end{gather*}
+Immediately, $(1,2),(2,3) \in \mathcal{R}_1 \cup \mathcal{R}_2$, but $(1,3) \notin \mathcal{R}_1 \cup \mathcal{R}_2$. Therefore, $\mathcal{R}_1 \cup \mathcal{R}_2$ is not transitive, so that $\mathcal{R}_1 \cup \mathcal{R}_2$ is not an equivalence relation on $A$. Thus $\mathcal{R}_1 \cup \mathcal{R}_2$ forms a counterexample.~$\blacklozenge$
+
+\section*{Problem.5}
+Define an equivalence relation $\mathcal{R}$ on $\mathbb{Z}$ given by
+\begin{gather*}
+\mathcal{R} = \{ (x,y) \in (\mathbb{Z} \times \mathbb{Z}) ~|~ x^3 \equiv y^3 ~\left(\mathrm{mod}~4\right) \}
+\end{gather*}
+First we consider the divisibility of $y^3$ for $y \in \mathbb{Z}$ by four cases.\\
+\underline{\textit{Case $1$}}: $y \equiv 0 ~\left(\mathrm{mod}~4\right)$. Then, $\exists k \in \mathbb{Z} ~s.t.~ y = 4k$. Thus $y^3 = \left(4k\right)^3 = 4 \cdot 16 k^3$, $y^3 \equiv 0 ~\left(\mathrm{mod}~4\right)$. \\[1em]
+\underline{\textit{Case $2$}}: $y \equiv 1 ~\left(\mathrm{mod}~4\right)$. Then, $\exists k \in \mathbb{Z} ~s.t.~ y = 4k + 1$. Thus $y^3 = \left(4k + 1\right)^3 = 64 k^3 + 48 k^2 + 12 k + 1 = 4 \left( 16 k^3 + 12 k^2 + 3 k \right) + 1$, $y^3 \equiv 1 ~\left(\mathrm{mod}~4\right)$. \\[1em]
+\underline{\textit{Case $3$}}: $y \equiv 2 ~\left(\mathrm{mod}~4\right)$. Then, $\exists k \in \mathbb{Z} ~s.t.~ y = 4k + 2$. Thus $y^3 = \left(4k + 2\right)^3 = 64 k^3 + 96 k^2 + 48 k + 8 = 4 \left( 16 k^3 + 24 k^2 + 12 k + 2\right)$, $y^3 \equiv 0 ~\left(\mathrm{mod}~4\right)$. \\[1em]
+\underline{\textit{Case $4$}}: $y \equiv 3 ~\left(\mathrm{mod}~4\right)$. Then, $\exists k \in \mathbb{Z} ~s.t.~ y = 4k + 3$. Thus $y^3 = \left(4k + 3\right)^3 = 64 k^3 + 144 k^2 + 108 k + 27 = 4 \left( 16 k^3 + 36 k^2 + 27 k + 6\right) + 3$, $y^3 \equiv 3 ~\left(\mathrm{mod}~4\right)$. \\[1em]
+Therefore, in summary, for $y \in \mathbb{Z}$
+\begin{align*}
+y \equiv 0 ~\left(\mathrm{mod}~4\right) &\Rightarrow y^3 \equiv 0 ~\left(\mathrm{mod}~4\right)\\[1em]
+y \equiv 1 ~\left(\mathrm{mod}~4\right) &\Rightarrow y^3 \equiv 1 ~\left(\mathrm{mod}~4\right)\\[1em]
+y \equiv 2 ~\left(\mathrm{mod}~4\right) &\Rightarrow y^3 \equiv 0 ~\left(\mathrm{mod}~4\right)\\[1em]
+y \equiv 3 ~\left(\mathrm{mod}~4\right) &\Rightarrow y^3 \equiv 3 ~\left(\mathrm{mod}~4\right)
+\end{align*}
+Now, we determine the distinct equivalence classes, starting from the integer $0,1,3,\dots$.
+\begin{align*}
+[0] &= \{x \in \mathbb{Z} ~|~ x \mathcal{R} 0 \} = \{x \in \mathbb{Z} ~|~ x^3 \equiv 0^3 \equiv 0 ~\left(\mathrm{mod}~4\right)\} \\[1em]
+&= \{0, \pm 2, \pm 4, \pm 6, \dots\}
+\end{align*}
+\begin{align*}
+[1] &= \{x \in \mathbb{Z} ~|~ x \mathcal{R} 1 \} = \{x \in \mathbb{Z} ~|~ x^3 \equiv 1^3 \equiv 1 ~\left(\mathrm{mod}~4\right)\} \\[1em]
+&= \{ \dots, -11, -7, -3, 1, 5, 9, \dots \}
+\end{align*}
+\begin{align*}
+[3] &= \{x \in \mathbb{Z} ~|~ x \mathcal{R} 3 \} = \{x \in \mathbb{Z} ~|~ x^3 \equiv 3^3 \equiv 3 ~\left(\mathrm{mod}~4\right)\} \\[1em]
+&= \{ \dots, -9, -5, -1, 3, 7, 11, \dots \}
+\end{align*}
+and obviously $[0], [1], [3]$ are a partition of $\mathbb{Z}$.\\[1em]
+Therefore, the equivalence classes of $\mathcal{R}$ are given by $[0], [1], [3]$.
+
+\section*{Problem.6}
+Define an equivalence relation $\mathcal{R}$ on $\mathbb{Z}$ given by
+\begin{gather*}
+\mathcal{R} = \{ (a,b) \in (\mathbb{Z} \times \mathbb{Z}) ~|~ a^2 \equiv b^2 ~\left(\mathrm{mod}~5\right) \}
+\end{gather*}
+First, we prove that $\mathcal{R}$ is an equivalence relation on $\mathbb{Z}$.\\[1em]
+\underline{\textit{Proof}}: \\[1em]
+Let $a \in \mathbb{Z}$. Since $5 \mid 0$, it follows that $5 \mid \left( a^2 - a^2 \right)$, so that $a^2 \equiv a^2 ~\left(\mathrm{mod}~5\right).$ Thus, $(a,a) \in \mathcal{R}$ implying that $\mathcal{R}$ is reflexive.\\[1em]
+Next, let $(a,b) \in \mathcal{R}$, where $a, b \in \mathbb{Z}$. Then, $5 \mid \left( a^2 - b^2 \right)$. Here, $\left( b^2 - a^2 \right) = - \left( a^2 - b^2 \right)$. Since we know that $\forall x, n \in \mathbb{Z} ~s.t.~ n \neq 0,~ n \mid x \Rightarrow n \mid (-x)$, and $\left( a^2 - b^2 \right), 5 \in \mathbb{Z} ~s.t.~ 5 \neq 0$, it follows that $5 \mid \left( b^2 - a^2 \right)$. Thus, $(b,a) \in \mathcal{R}$ implying that $\mathcal{R}$ is symmetric.\\[1em]
+Lastly, let $(a, b), (b, c) \in \mathcal{R}$. By definition,  $5 \mid \left( a^2 - b^2 \right)$ and $5 \mid \left( b^2 - c^2 \right)$. Here, $a^2 - c^2 = \left( a^2 - b^2\right) + \left( b^2 - c^2\right)$.  Since we know that $\forall x, y, n \in \mathbb{Z} ~s.t.~ n \neq 0,~ n \mid x$ and $n \mid y \Rightarrow n \mid (x + y)$, and $\left( a^2 - b^2 \right), \left( b^2 - c^2 \right), 5 \in \mathbb{Z} ~s.t.~ 5 \neq 0$, it follows that $5 \mid \left( a^2 - c^2 \right)$. Thus, $(a,c) \in \mathcal{R}$ implying that $\mathcal{R}$ is transitive.\\[1em]
+From the above, the statement is true.~$\blacksquare$\\[1em]
+Next, we consider the divisibility of $y^2$ for $y \in \mathbb{Z}$ by five cases.\\
+\underline{\textit{Case $1$}}: $y \equiv 0 ~\left(\mathrm{mod}~5\right)$. Then, $\exists k \in \mathbb{Z} ~s.t.~ y = 5k$. Thus $y^2 = \left(5k\right)^2 = 5 \cdot 5 k^2$, $y^2 \equiv 0 ~\left(\mathrm{mod}~5\right)$. \\[1em]
+\underline{\textit{Case $2$}}: $y \equiv 1 ~\left(\mathrm{mod}~5\right)$. Then, $\exists k \in \mathbb{Z} ~s.t.~ y = 5k + 1$. Thus $y^2 = \left(5k + 1\right)^2 = 25k^2 + 10k + 1 = 5 \left( 5 k^2 + 2 k \right) + 1$, $y^2 \equiv 1 ~\left(\mathrm{mod}~5\right)$. \\[1em]
+\underline{\textit{Case $3$}}: $y \equiv 2 ~\left(\mathrm{mod}~5\right)$. Then, $\exists k \in \mathbb{Z} ~s.t.~ y = 5k + 2$. Thus $y^2 = \left(5k + 2\right)^2 = 25k^2 + 20k + 4 = 5 \left( 5 k^2 + 4 k \right) + 4$, $y^2 \equiv 4 ~\left(\mathrm{mod}~5\right)$. \\[1em]
+\underline{\textit{Case $4$}}: $y \equiv 3 ~\left(\mathrm{mod}~5\right)$. Then, $\exists k \in \mathbb{Z} ~s.t.~ y = 5k + 3$. Thus $y^2 = \left(5k + 3\right)^2 = 25k^2 + 30k + 9 = 5 \left( 5 k^2 + 6 k + 1 \right) + 4$, $y^2 \equiv 4 ~\left(\mathrm{mod}~5\right)$. \\[1em]
+\underline{\textit{Case $5$}}: $y \equiv 4 ~\left(\mathrm{mod}~5\right)$. Then, $\exists k \in \mathbb{Z} ~s.t.~ y = 5k + 4$. Thus $y^2 = \left(5k + 4\right)^2 = 25k^2 + 40k + 16 = 5 \left( 5 k^2 + 8 k + 3 \right) + 1$, $y^2 \equiv 1 ~\left(\mathrm{mod}~5\right)$. \\[1em]
+Therefore, in summary, for $y \in \mathbb{Z}$
+\begin{align*}
+y \equiv 0 ~\left(\mathrm{mod}~5\right) &\Rightarrow y^2 \equiv 0 ~\left(\mathrm{mod}~5\right)\\[1em]
+y \equiv 1 ~\left(\mathrm{mod}~5\right) &\Rightarrow y^2 \equiv 1 ~\left(\mathrm{mod}~5\right)\\[1em]
+y \equiv 2 ~\left(\mathrm{mod}~5\right) &\Rightarrow y^2 \equiv 4 ~\left(\mathrm{mod}~5\right)\\[1em]
+y \equiv 3 ~\left(\mathrm{mod}~5\right) &\Rightarrow y^2 \equiv 4 ~\left(\mathrm{mod}~5\right)\\[1em]
+y \equiv 4 ~\left(\mathrm{mod}~5\right) &\Rightarrow y^2 \equiv 1 ~\left(\mathrm{mod}~5\right)
+\end{align*}
+Now, we determine the distinct equivalence classes, starting from the integer $0,1,2,\dots$.
+\begin{align*}
+[0] &= \{x \in \mathbb{Z} ~|~ x \mathcal{R} 0 \} = \{x \in \mathbb{Z} ~|~ x^2 \equiv 0^2 \equiv 0 ~\left(\mathrm{mod}~5\right)\} \\[1em]
+&= \{0, \pm 5, \pm 10, \pm 15, \dots\}
+\end{align*}
+\begin{align*}
+[1] &= \{x \in \mathbb{Z} ~|~ x \mathcal{R} 1 \} = \{x \in \mathbb{Z} ~|~ x^2 \equiv 1^2 \equiv 1 ~\left(\mathrm{mod}~5\right)\} \\[1em]
+&= \{ \pm 1, \pm 4, \pm 6, \pm 9, \dots \}
+\end{align*}
+\begin{align*}
+[2] &= \{x \in \mathbb{Z} ~|~ x \mathcal{R} 2 \} = \{x \in \mathbb{Z} ~|~ x^2 \equiv 2^2 \equiv 4 ~\left(\mathrm{mod}~5\right)\} \\[1em]
+&= \{ \pm 2, \pm 3, \pm 5, \pm 7, \dots \}
+\end{align*}
+and obviously $[0], [1], [2]$ are a partition of $\mathbb{Z}$.\\[1em]
+Therefore, the equivalence classes of $\mathcal{R}$ are given by $[0], [1], [2]$.
+
+\end{document}
