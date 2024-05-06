@@ -1,0 +1,237 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{derivative}
+\usepackage{bm}
+\usepackage{comment}
+\usepackage{cancel}
+\usepackage{xcolor}
+\usepackage{pifont}
+\usepackage{tikz}
+
+
+\begin{document}
+\title{Mathematical Proof: Problem Set 9}
+\author{Koichiro Takahashi}
+\maketitle
+\noindent The definition of function is given below.\\[1em]
+\underline{\textit{Definition}}:
+Let $A,B$ be sets. A function $f: A \longrightarrow B$ is a relation from $A$ to $B$, $s.t.$
+\begin{align*}
+&(i)~(a,b), (a,c) \in f \Rightarrow b = c\\[1em]
+&(ii)~\forall a \in A, \exists b \in B ~s.t.~ (a,b) \in f
+\end{align*}
+Also, two properties of specific function are defined below.\\[1em]
+\underline{\textit{Definition}}:
+A function $f: A \longrightarrow B$ is one-to-one, or injective,
+\begin{center}
+if $f(x) = f(y)$, where $x,y \in A$, then $x = y$.
+\end{center}
+\underline{\textit{Definition}}:
+A function $f: A \longrightarrow B$ is onto, or surjective, if $f(A) = B$.\\[1em]
+We define for two sets to have the same cardinality as following.\\[1em]
+\underline{\textit{Definition}}:
+Two sets $A$ and $B$ have the same cardinality, denoted by $|A| = |B|$,
+\begin{center}
+if $A = B = \emptyset$, or $\exists f: A \longrightarrow B ~s.t.~f$ is a bijection.    
+\end{center}
+For the use in Problem.2, we define the floor function $f: \mathbb{R} \longrightarrow \mathbb{Z}$ by
+\begin{gather*}
+f(x) = \lfloor x \rfloor = \max \{m \in \mathbb{Z} ~|~ m \leq x \}
+\end{gather*}
+
+\section*{Problem.1}
+$(a)$\\
+Here,
+\begin{gather*}
+A_1 = \mathbb{R},~ R_1 = \{(x,y) ~|~ x \in A_2, y = 4x - 3 \} 
+\end{gather*}
+\underline{\textit{Proof}}: Let $a \in A_1$. We prove that $R_1$ is a function by showing that it satisfies the condition $(i)$ and $(ii)$.\\[1em]
+$(i)$ We prove by contradiction. Assume, to the contrary, that $\exists b,c \in \mathbb{R}, ~s.t.~ b = R_1(a), c = R_1(a),~ b \neq c$. Then, since $b \neq c$, $4a - 3 \neq 4a - 3 \Leftrightarrow 4a \neq 4a \Leftrightarrow a \neq a$, which is a contradiction since $a = a$. Therefore, $b = c$, $R_1$ satisfies the condition $(i)$.\\[1em]
+$(ii)$
+Obviously, $\forall x \in A_1, \exists y \in \mathbb{R}, ~s.t.~ (x, y) \in R_1$, since $R_1(x) = 4x - 3 \in \mathbb{R}$. Therefore, $R_1$ also satisfies the condition $(ii)$.\\[1em]
+From the above, $R_1$ is a function.~$\blacksquare$\\[1em]
+$(b)$\\
+Here,
+\begin{gather*}
+A_2 = [0,\infty),~ R_2 = \{(x,y) ~|~ x \in A_2, (y+2)^2 = x \}
+\end{gather*}
+\underline{\textit{Disproof}}: We disprove that $R_2$ is a function by showing that there exists a counterexample of the condition $(i)$.\\
+Let $a \in A_2 ~s.t.~ a \neq 0$. Here,
+\begin{gather*}
+(y+2)^2 = x \Leftrightarrow y = - 2 \pm \sqrt{x}.
+\end{gather*}
+We choose $b,c \in \mathbb{R} ~s.t.~ b = - 2 + \sqrt{a},~c = - 2 - \sqrt{a}$. Then, since $a \neq 0$, $\sqrt{a} \neq -\sqrt{a} \Leftrightarrow - 2 + \sqrt{a} \neq - 2 - \sqrt{a} \Leftrightarrow b \neq c$. However, $(b+2)^2 = (- 2 + \sqrt{a} + 2)^2 = (\sqrt{a})^2 = a$, $(c+2)^2 = (- 2 - \sqrt{a} + 2)^2 = (- \sqrt{a})^2 = a$. Therefore, $\exists a, b, c, ~s.t.~ (a,b),(a,c) \in R_2,~b \neq c$, which violates the condition $(i)$.\\[1em]
+From the above, $R_2$ is not a function.~$\blacklozenge$\\[1em]
+$(c)$\\
+Here,
+\begin{gather*}
+A_3 = \mathbb{R},~ R_3 = \{(x,y) ~|~ x \in A_3, (x + y)^2 = 4 \}
+\end{gather*}
+\underline{\textit{Disproof}}: We disprove that $R_3$ is a function by showing that there exists a counterexample of the condition $(i)$.\\
+Let $a \in A_3$. Here,
+\begin{gather*}
+(x+y)^2 = 4 \Leftrightarrow y = \pm 2 - x.
+\end{gather*}
+We choose $b,c \in \mathbb{R} ~s.t.~ b = 2 - a,~c = - 2 - a$. Then, since $2 \neq - 2$, $2 - a \neq - 2 - a \Leftrightarrow b \neq c$. However, $(a+b)^2 = (a + 2 - a)^2 = (2)^2 = 4$, $(a+c)^2 = (a - 2 - a)^2 = (- 2)^2 = 4$. Therefore, $\exists a, b, c, ~s.t.~ (a,b),(a,c) \in R_3,~b \neq c$, which violates the condition $(i)$.\\[1em]
+From the above, $R_3$ is not a function.~$\blacklozenge$\\[1em]
+\section*{Problem.2}
+Example for each problem, $f: \mathbb{N} \longrightarrow \mathbb{N}$ is denoted as $f(n)$ for $n \in \mathbb{N}$.\\[1em]
+$(a)$\\
+\begin{gather*}
+f(n) = n
+\end{gather*}
+$(b)$\\
+\begin{gather*}
+f(n) = 2n
+\end{gather*}
+$(c)$\\
+\begin{gather*}
+f(n) = \left\lfloor{ \frac{n}{2} + 1} \right\rfloor
+\end{gather*}
+$(d)$\\
+\begin{gather*}
+f(n) = (n-1)^2 + 1
+\end{gather*}
+\section*{Problem.3}
+Here, $A = \{2,4,6\},B = \{1,3,4,7,9\}$. Therefore,
+\begin{align*}
+\mathcal{F} &= \{ (a,b) ~|~ a \in A, b \in B, ~s.t.~ 5 \mid (ab + 1) \}\\[1em]
+&= \{(2,7),(4,1),(6,4),(6,9) \}
+\end{align*}
+Thus, $(6,4),(6,9) \in \mathcal{F}$, but $4 \neq 9$. This violates the condition $(i)$ for $\mathcal{F}$ to be a function. Therefore, $\mathcal{F}$ is neither one-to-one nor a well-defined function.
+\section*{Problem.4}
+\textcolor{red}{I also excluded \{1\} from $A$ for $f$ to be a well-defined function.}\\[1em]
+Here, $A = \mathbb{R} - \{0, 1\}$, and $f: A \longrightarrow A$ defined by $f(x) = 1 - \frac{1}{x}$.\\[1em]
+$(a)$\\
+Let $x \in A$. Since $x \neq 0, x \neq 1$,
+\begin{align*}
+(f \circ f \circ f)(x) &= (f \circ f)\left(1 - \frac{1}{x}\right) = f\left(1 - \frac{1}{\left(1 - \frac{1}{x}\right)}\right) = f\left(1 - \frac{x}{x - 1}\right) = f \left(-\frac{1}{x - 1}\right)\\[1em]
+&= f \left(\frac{1}{1 - x}\right) = \left(1 - \frac{1}{\left(\frac{1}{1 - x}\right)}\right) = 1 - \left(1 - x \right) = x = i_A(x)
+\end{align*}
+$(b)$\\
+\begin{gather*}
+f^{-1}(x) = (f \circ f)(x) = \frac{1}{1 - x}
+\end{gather*}
+\section*{Problem.5}
+Here, $F: \mathbb{N} \longrightarrow (\mathbb{N} \cup \{0\})$ is defined by $F(n) = m$, where $n \in \mathbb{N}, \exists k \in \mathbb{O} ~s.t.~ k > 0,3n + 1 = 2^m k$.\\[1em]
+$(a)$\\
+\underline{\textit{Disproof}}: We disprove that $F$ is one-to-one by showing that there exists a counterexample.\\[1em]
+We choose $2, 4 \in \mathbb{N}$. Then, $3 \cdot 2 + 1 = 7 = 2^0 \cdot 7$, so that $F(2) = 0 ~\left(\because 7 \in \mathbb{O}, 7 > 0\right)$. Also, $3 \cdot 4 + 1 = 13 = 2^0 \cdot 13$, so that $F(4) = 0 ~\left(\because 3 \in \mathbb{O}, 3 > 0\right)$. Therefore, $(2,0),(4,0) \in F,~2 \neq 4$, which is a counterexample.
+From the above, $F$ is not one-to-one.~$\blacklozenge$\\[1em]
+$(b)$\\
+We prove that $F$ is onto, so that prove
+\begin{gather*}
+\forall m \in (\mathbb{N} \cup \{0\}), \exists n \in \mathbb{N} ~s.t.~ F(n) = m.
+\end{gather*}
+Here,
+\begin{gather*}
+F(n) = m \Leftrightarrow \exists k \in \mathbb{O} ~s.t.~ k > 0,3n + 1 = 2^m k
+\end{gather*}
+\underline{\textit{Proof}}: We employ induction.\\[1em]
+For each non-negative integer m, let $P(m)$ be a statement, defined by below:
+\begin{gather*}
+P(m): \exists n \in \mathbb{N} ~s.t.~ (n,m) \in F
+\end{gather*}
+First, we prove $P(0)$ and $P(1)$ are true.\\[1em]
+Note that $2 \in \mathbb{N}$. Since $3 \cdot 2 + 1 = 7 = 2^0 \cdot 7$ and $7 \in \mathbb{O}, 7 > 0$, $F(2) = 0$. Therefore, $(2,0) \in F$, so that $P(0)$ is true.\\[1em]
+Note that $3 \in \mathbb{N}$. Since $3 \cdot 3 + 1 = 10 = 2^1 \cdot 5$ and $5 \in \mathbb{O}, 5 > 0$, $F(3) = 1$. Therefore, $(3,1) \in F$, so that $P(1)$ is true.\\[1em]
+Let $i \in (\mathbb{N} \cup \{0\})$, assume that $P(i)$ is true.
+Then,
+\begin{gather*}
+\exists n_i \in \mathbb{N}, k_i \in \mathbb{O}~s.t.~ k_i > 0, 3n_i + 1 = 2^i k_i
+\end{gather*}
+Also, observe
+\begin{gather*}
+3(n_i + 2^i k_i) + 1 = 2^i k_i + 2^i k_i \cdot 3 = 2^i \left( k_i + 3 k_i\right) = 2^i \cdot 4 k_i = 2^{i+2} k_i
+\end{gather*}
+Therefore, by choosing $n_{i+2} = n_i + 2^i k_i,k_{i+2} = k_i$,
+\begin{gather*}
+3 n_{i+2} + 1 = 2^{i+2} k_{i+2}
+\end{gather*}
+Note that $k_{i+2} \in \mathbb{O}, k_{i+2} > 0$, thus $n_{i+2} \in \mathbb{N}$. Therefore, $\exists n_{i+2} \in \mathbb{N} ~s.t.~ (n_{i+2}, i+2) \in F$, so that $P(i+2)$ is true.\\[1em]
+By the Principle of Mathematical Induction, $P(m)$ is true for every $m \in (\mathbb{N} \cup \{0\})$.\\[1em]
+From the above, $F$ is onto.~$\blacksquare$
+
+\section*{Problem.6}
+\begin{center}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,333); %set diagram left start at 0, and has height of 333
+
+%Shape: Ellipse [id:dp22477829550602713] 
+\draw   (89,140.72) .. controls (89,78.73) and (170.26,28.49) .. (270.5,28.49) .. controls (370.74,28.49) and (452,78.73) .. (452,140.72) .. controls (452,202.7) and (370.74,252.95) .. (270.5,252.95) .. controls (170.26,252.95) and (89,202.7) .. (89,140.72) -- cycle ;
+%Shape: Ellipse [id:dp15930494716166077] 
+\draw   (231,140.72) .. controls (231,78.73) and (309.01,28.49) .. (405.25,28.49) .. controls (501.49,28.49) and (579.5,78.73) .. (579.5,140.72) .. controls (579.5,202.7) and (501.49,252.95) .. (405.25,252.95) .. controls (309.01,252.95) and (231,202.7) .. (231,140.72) -- cycle ;
+%Curve Lines [id:da801021906812154] 
+\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ]   (172,170.37) .. controls (355.15,376.86) and (470.67,219.12) .. (511.78,185.12) ;
+\draw [shift={(513,184.13)}, rotate = 141.55] [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+\draw  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ] (177,185.19) .. controls (176.48,179.11) and (174.91,174.13) .. (172.3,170.26) .. controls (175.96,173.02) and (180.65,174.69) .. (186.4,175.24) ;
+%Curve Lines [id:da8306137916237089] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (333,124) .. controls (336.94,170.3) and (379.69,120.54) .. (341.79,119.03) ;
+\draw [shift={(340,119)}, rotate = 360] [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+\draw  [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ] (331.72,135.01) .. controls (332.58,131.07) and (332.79,127.28) .. (332.35,123.62) .. controls (333.44,127.14) and (335.18,130.51) .. (337.58,133.75) ;
+
+% Text Node
+\draw (221,2.89) node [anchor=north west][inner sep=0.75pt]    {$S$};
+% Text Node
+\draw (441,2.89) node [anchor=north west][inner sep=0.75pt]    {$T$};
+% Text Node
+\draw (166,104.53) node [anchor=north west][inner sep=0.75pt]    {$S-T$};
+% Text Node
+\draw (475,101.35) node [anchor=north west][inner sep=0.75pt]    {$T-S$};
+% Text Node
+\draw (269,285.18) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$ \begin{array}{l}
+f\ \ \ \ :\ ( S-T) \ \longrightarrow ( T-S)\\
+f^{-1} :\ \ ( T-S) \ \longrightarrow ( S-T)
+\end{array}$};
+% Text Node
+\draw (317,82.4) node [anchor=north west][inner sep=0.75pt]    {$S\cap T$};
+% Text Node
+\draw (269,152.4) node [anchor=north west][inner sep=0.75pt]    {$\textcolor[rgb]{0.29,0.56,0.89}{i_{S\cap T}} :\textcolor[rgb]{0.29,0.56,0.89}{\ S\cap T\longrightarrow S\cap T}$};
+
+\end{tikzpicture}
+\end{center}
+First, we show a lemma below:\\
+\underline{\textit{Lemma.1}}: Let $S, T$ be non-empty sets $s.t.~ T - S \neq \emptyset, S - T \neq \emptyset$. 
+\begin{center}
+$\mathcal{G} = \{\{S - T\}, \{ S \cap T \} \}$ is a partition of $S$
+\end{center}
+\underline{\textit{Proof}}:
+Here, the set identity, (Note that $( (S - T) = (S \cap \bar{T})$)
+\begin{gather*}
+S = S \cap (T \cup \bar{T}) = (S \cap \bar{T}) \cup (S \cap T) = (S - T) \cup (S \cap T)
+\end{gather*}
+Also, $T \cap \bar{T} = \emptyset$, so that
+\begin{gather*}
+(S - T) \cap (S \cap T) = \emptyset
+\end{gather*}
+From the above, $\mathcal{G} = \{\{S - T\}, \{ S \cap T \} \}$ is a partition of $S$.~$\blacksquare$\\[1em]
+Now, we show the statement in the problem.\\[1em]
+\underline{\textit{Proof}}: Let $S,T$ be sets. Suppose $|S-T| = |T-S|$. By definition, $\exists f: (T-S) \longrightarrow (S-T) ~s.t.~ f$ is a bijection.\\[1em]
+\underline{\textit{Case $1$}}: $S - T = T - S = \emptyset$.\\[1em]
+Then, $S = T$. Therefore, since $\exists g: S \longrightarrow S$ defined by $g = i_S = g^{-1}$, $\exists g: S \longrightarrow T ~s.t.~ g$ is a bijection. So, $|S| = |T|$.\\[1em]
+\underline{\textit{Case $2$}}: $T - S \neq \emptyset, S - T \neq \emptyset$.\\[1em]
+Let $x \in (T - S)$. Then, $\exists y \in (S-T) ~s.t.~ (x,y) \in f$ and $(y,x) \in f^{-1}$. By definition, $x \in T, x \notin S$. Also, $y \in T, y \notin S$.\\[1em]
+Here, we show that $h: S \longrightarrow T$, defined by
+\begin{gather*}
+h(x) = \left\{
+\begin{array}{c}
+    f(x) = y \in (T-S) \subseteq T ~\mathrm{if}~ x \in (S-T) \subseteq S\\[1em]
+    i_{(S \cap T)}(x) = x \in (S \cap T) \subseteq T ~\mathrm{if}~ x \in (S \cap T) \subseteq S
+\end{array}
+\right.
+\end{gather*}
+is a bijection.\\[1em]
+By Lemma.1, $h$ is at least a function, and can be split by cases.\\
+\underline{\textit{Subcase.$1$}}: $x \in (S-T)$, then $f(x)$ is a bijection.\\
+\underline{\textit{Subcase.$2$}}: $x \in (S \cap T)$, then obviously the identity function $i_{(S \cap T)}(x)$ is a bijection.\\[1em]
+Therefore, $\exists h: S \longrightarrow T ~s.t.~ h$ is a bijection. So, $|S| = |T|$.\\[1em]
+From the above, the statement is true.~$\blacksquare$
+
+\end{document}
